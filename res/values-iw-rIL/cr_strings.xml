@@ -22,7 +22,7 @@
     <string name="current_build_type">מצב הבנייה הנוכחית: <xliff:g id="build_type" example="Type">%1$s</xliff:g></string>
     <string name="build_type_unknown">גרסה לא מקורית או חסר מידע</string>
     <string name="info_dialog_title">הידעת?</string>
-    <string name="info_dialog_message">עדכוני CrDroid הם חבילות התקנה מלאות. המשמעות היא שניתן תמיד להתקין רק את העדכון האחרון, גם אם דילגת על חלק מהעדכונים!</string>
+    <string name="info_dialog_message">עדכוני AlphaDroid הם חבילות התקנה מלאות. המשמעות היא שניתן תמיד להתקין רק את העדכון האחרון, גם אם דילגת על חלק מהעדכונים!</string>
     <string name="info_dialog_ok">תודה על המידע!</string>
     <string name="local_update_import">עדכון מקומי</string>
     <string name="local_update_import_progress">ייבוא עדכון מקומי\u2026</string>
