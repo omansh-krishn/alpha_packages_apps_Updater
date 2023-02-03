@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2017-2023 The LineageOS Project
+ * Copyright (C) 2023 AlphaDroid
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -278,8 +279,9 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 DateFormat.LONG, update.getTimestamp());
         String buildVersion = mActivity.getString(R.string.list_build_version,
                 update.getVersion());
+        String buildType = BuildInfoUtils.getBuildType();
         viewHolder.mBuildDate.setText(buildDate);
-        viewHolder.mBuildVersion.setText(buildVersion);
+        viewHolder.mBuildVersion.setText(buildVersion + " (" + buildType + ")");
         viewHolder.mBuildVersion.setCompoundDrawables(null, null, null, null);
 
         if (activeLayout) {

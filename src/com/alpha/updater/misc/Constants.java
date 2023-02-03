@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2017-2023 The LineageOS Project
+ * Copyright (C) 2023 AlphaDroid
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +42,7 @@ public final class Constants {
     public static final String PROP_AB_DEVICE = "ro.build.ab_update";
     public static final String PROP_BUILD_DATE = "ro.build.date.utc";
     public static final String PROP_BUILD_VERSION = "ro.alpha.modversion";
+    public static final String PROP_BUILD_TYPE = "ro.alpha.build.package";
     public static final String PROP_DEVICE = "ro.alpha.device";
     public static final String PROP_NEXT_DEVICE = "ro.updater.next_device";
     public static final String PROP_UPDATER_ALLOW_DOWNGRADING = "alpha.updater.allow_downgrading";
