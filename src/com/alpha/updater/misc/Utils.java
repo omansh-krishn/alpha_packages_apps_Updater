@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2017-2022 The LineageOS Project
+ * Copyright (C) 2023 AlphaDroid
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +28,7 @@ import android.net.NetworkInfo;
 import android.os.SystemProperties;
 import android.os.storage.StorageManager;
 import android.preference.PreferenceManager;
+import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -115,11 +117,17 @@ public class Utils {
 
     public static boolean isCompatible(UpdateBaseInfo update) {
         if (!SystemProperties.getBoolean(Constants.PROP_UPDATER_ALLOW_DOWNGRADING, false) &&
-                update.getTimestamp() <= SystemProperties.getLong(Constants.PROP_BUILD_DATE, 0)) {
-            Log.d(TAG, update.getName() + " is older than/equal to the current build");
+                update.getTimestamp() <= SystemProperties.getLong(Constants.PROP_BUILD_DATE, 0) ||
+                !isSameBuildType()) {
             return false;
         }
             return true;
+    }
+
+    private static boolean isSameBuildType() {
+        String type = BuildInfoUtils.getBuildType();
+        if (TextUtils.isEmpty(type)) return false;
+        return type.equals(mBuildType);
     }
 
     public static boolean canInstall(UpdateBaseInfo update) {

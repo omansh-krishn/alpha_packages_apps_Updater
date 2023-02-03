@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2017-2022 The LineageOS Project
+ * Copyright (C) 2023 AlphaDroid
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -103,6 +104,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         private final TextView mBuildDate;
         private final TextView mBuildVersion;
         private final TextView mBuildSize;
+        private final TextView mBuildType;
 
         private final LinearLayout mProgress;
         private final ProgressBar mProgressBar;
@@ -117,6 +119,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             mBuildDate = view.findViewById(R.id.build_date);
             mBuildVersion = view.findViewById(R.id.build_version);
             mBuildSize = view.findViewById(R.id.build_size);
+            mBuildType = view.findViewById(R.id.build_type);
 
             mProgress = view.findViewById(R.id.progress);
             mProgressBar = view.findViewById(R.id.progress_bar);
@@ -275,8 +278,10 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
                 DateFormat.LONG, update.getTimestamp());
         String buildVersion = mActivity.getString(R.string.list_build_version,
                 update.getVersion());
+        String buildType = BuildInfoUtils.getBuildType();
         viewHolder.mBuildDate.setText(buildDate);
         viewHolder.mBuildVersion.setText(buildVersion);
+        viewHolder.mBuildType.setText(" (" + buildType + ")");
         viewHolder.mBuildVersion.setCompoundDrawables(null, null, null, null);
 
         if (activeLayout) {
