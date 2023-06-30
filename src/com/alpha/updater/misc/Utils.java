@@ -28,7 +28,6 @@ import android.net.Network;
 import android.net.NetworkCapabilities;
 import android.os.SystemProperties;
 import android.os.storage.StorageManager;
-import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
